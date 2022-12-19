@@ -26,10 +26,10 @@ gallery.insertAdjacentHTML('afterbegin', markup);
 gallery.addEventListener('click', onClick);
 
 function onClick(evt) {
-  // console.log(evt.target);
+  console.log(evt.target);
 
   if (evt.target.classList.contains('gallery__image')) {
-    const currentImg = evt.target.closest('.gallery__img');
+    const currentImg = evt.target.dataset.source;
     console.log(currentImg);
   }
 }
