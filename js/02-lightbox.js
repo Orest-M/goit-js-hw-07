@@ -14,8 +14,18 @@ const markup = galleryItems
 
 gallery.insertAdjacentHTML('afterbegin', markup);
 
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+});
+
 gallery.addEventListener('click', onClick);
 
-function onClick(evt) {}
+function onClick(evt) {
+  evt.preventDefault();
+
+  if (evt.target.nodeName !== 'IMG') {
+    return;
+  }
+}
 
 // console.log(galleryItems);
