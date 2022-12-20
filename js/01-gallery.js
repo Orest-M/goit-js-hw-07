@@ -40,9 +40,12 @@ function onClick(evt) {
 
   instance.show();
 
-  gallery.addEventListener('keydown', (evt) => {
+  gallery.addEventListener('keydown', closeModal);
+
+  function closeModal(evt) {
     if (evt.code === 'Escape') {
       instance.close();
+      gallery.removeEventListener('keydown', closeModal);
     }
-  });
+  }
 }
